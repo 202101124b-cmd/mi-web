@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería - Mi Página Personal</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<script>
+    window.addEventListener("scroll", function () {
+        const header = document.querySelector("header");
+        header.classList.toggle("scrolled", window.scrollY > 50);
+    });
+</script>
+
+<body>
+
+    <div class="container">
+
+        <!-- HEADER -->
+        <header>
+            <div class="container header-content">
+                <h1>Bienvenido a mi página web</h1>
+                <nav>
+                    <a href="index.html">Inicio</a>
+                    <a href="biografia.html">Biografía</a>
+                    <a href="familia.html">Familia</a>
+                    <a href="estudios.html">Estudios</a>
+                    <a href="materiales.html">Materiales</a>
+                    <a href="galeria.html">Galería</a>
+                    <a href="descargas.html">Descargas</a>
+
+                    <input type="text" id="buscador" placeholder="Buscar en la página..." onkeyup="buscarContenido()">
+                </nav>
+            </div>
+        </header>
+
+        <!-- CONTENIDO -->
+        <main>
+
+            <!-- GALERÍA -->
+            <section>
+                <h2>Galería de Fotos</h2>
+
+                <p>
+                    En esta sección puedes ver algunas imágenes representativas
+                    de momentos importantes y actividades realizadas.
+                </p>
+
+                <div class="galeria">
+                    <img src="img/image1.jpeg" alt="Imagen 1">
+                    <img src="img/image2.jpeg" alt="Imagen 2">
+                    <img src="img/image3.jpeg" alt="Imagen 3">
+                    <img src="img/image4.jpeg" alt="Imagen 4">
+                    <img src="img/image5.jpeg" alt="Imagen 5">
+                    <img src="img/image6.jpeg" alt="Imagen 6">
+                    <img src="img/image7.jpeg" alt="Imagen 7">
+                    <img src="img/image8.jpeg" alt="Imagen 8">
+                    <img src="img/image9.jpeg" alt="Imagen 9">
+                    <img src="img/image10.jpeg" alt="Imagen 10">
+                </div>
+            </section>
+
+            <!-- VIDEO -->
+            <section>
+                <h3>Video</h3>
+
+                <p>Presentación o contenido audiovisual relacionado.</p>
+
+                <div class="video-container">
+                    <video controls>
+                        <source src="videos/vid1.mp4" type="video/mp4">
+                        Tu navegador no soporta el video.
+                    </video>
+
+                    <video controls>
+                        <source src="videos/vid2.mp4" type="video/mp4">
+                        Tu navegador no soporta el video.
+                    </video>
+                </div>
+            </section>
+
+        </main>
+        <footer>
+            <div class="footer-content">
+                <p>© 2026 - Mi Página Personal</p>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+
+</html>

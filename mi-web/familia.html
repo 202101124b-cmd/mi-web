@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Familia - Mi Página Personal</title>
+    <link rel="stylesheet" href="css/estilos.css">
+
+
+
+    <script>
+        window.addEventListener("scroll", function () {
+            const header = document.querySelector("header");
+            header.classList.toggle("scrolled", window.scrollY > 50);
+        });
+    </script>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- HEADER -->
+        <header>
+            <div class="container header-content">
+                <h1>Bienvenido a mi página web</h1>
+                <nav>
+                    <a href="index.html">Inicio</a>
+                    <a href="biografia.html">Biografía</a>
+                    <a href="familia.html">Familia</a>
+                    <a href="estudios.html">Estudios</a>
+                    <a href="materiales.html">Materiales</a>
+                    <a href="galeria.html">Galería</a>
+                    <a href="descargas.html">Descargas</a>
+
+                    <input type="text" id="buscador" placeholder="Buscar en la página..." onkeyup="buscarContenido()">
+                </nav>
+            </div>
+        </header>
+
+        <!-- CONTENIDO -->
+        <main>
+
+            <section>
+                <h2>Mi Familia</h2>
+
+                <p>
+                    Mi familia es una parte muy importante en mi vida. Está conformada por mi mamá,
+                    <strong>Nancy Salas Tapia</strong>, y mis hermanos.
+                </p>
+
+                <p>
+                    Ellos me apoyan en mis estudios y me motivan a seguir adelante.
+                    Compartimos momentos importantes como reuniones, celebraciones
+                    y diversas actividades juntos.
+                </p>
+
+            </section>
+
+            <!-- VALORES -->
+            <section>
+                <h3>Valores que me ha enseñado mi familia</h3>
+                <ul>
+                    <li>Respeto</li>
+                    <li>Responsabilidad</li>
+                    <li>Esfuerzo</li>
+                </ul>
+            </section>
+
+        </main>
+        <footer>
+            <div class="footer-content">
+                <p>© 2026 - Mi Página Personal</p>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+
+</html>

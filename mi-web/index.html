@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Mi Página Personal</title>
+    <link rel="stylesheet" href="css/estilos.css">
+
+    <script>
+        window.addEventListener("scroll", function () {
+            const header = document.querySelector("header");
+            header.classList.toggle("scrolled", window.scrollY > 50);
+        });
+    </script>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-content">
+            <h1>Bienvenido a mi página web</h1>
+            <nav>
+                <a href="index.html">Inicio</a>
+                <a href="biografia.html">Biografía</a>
+                <a href="familia.html">Familia</a>
+                <a href="estudios.html">Estudios</a>
+                <a href="materiales.html">Materiales</a>
+                <a href="galeria.html">Galería</a>
+                <a href="descargas.html">Descargas</a>
+
+                <input type="text" id="buscador" placeholder="Buscar en la página..." onkeyup="buscarContenido()">
+            </nav>
+        </div>
+    </header>
+    <div id="resultados" class="resultados-buscador"></div>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="container">
+
+        <section>
+            <h2>Sobre mí</h2>
+            <p>
+                Hola, soy estudiante de Ingeniería de Sistemas e Informática.
+                En esta página encontrarás información sobre mi vida personal,
+                mis estudios y materiales relacionados al curso de Programación Web.
+            </p>
+        </section>
+
+        <section>
+            <h3>Enlaces externos (absolutos)</h3>
+            <ul>
+                <li>
+                    <a href="https://developer.mozilla.org/es/docs/Web/HTML" target="_blank">
+                        Aprender HTML (MDN)
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.w3schools.com" target="_blank">
+                        Tutoriales Web (W3Schools)
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>¿Qué encontrarás en esta web?</h3>
+            <div class="cards">
+                <div class="card">📘 Información personal</div>
+                <div class="card">🎓 Mis estudios</div>
+                <div class="card">💻 Material del curso</div>
+                <div class="card">🖼️ Galería de fotos</div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <p>© 2026 - Mi Página Personal</p>
+        </div>
+    </footer>
+
+</body>
+
+
+<script>
+const paginas = [
+    {
+        titulo: "Inicio",
+        url: "index.html",
+        contenido: "sobre mi estudiante ingeniería sistemas informática materiales programación web inicio"
+    },
+    {
+        titulo: "Biografía",
+        url: "biografia.html",
+        contenido: "mi historia vida personal infancia familia biografia"
+    },
+    {
+        titulo: "Familia",
+        url: "familia.html",
+        contenido: "padres hermanos familia información personal"
+    },
+    {
+        titulo: "Estudios",
+        url: "estudios.html",
+        contenido: "universidad cursos programación web base de datos estudios"
+    },
+    {
+        titulo: "Materiales",
+        url: "materiales.html",
+        contenido: "documentos pdf recursos programación materiales"
+    },
+    {
+        titulo: "Galería",
+        url: "galeria.html",
+        contenido: "fotos imágenes galería recuerdos"
+    },
+    {
+        titulo: "Descargas",
+        url: "descargas.html",
+        contenido: "archivos descargar pdf documentos recursos"
+    }
+];
+
+function buscarContenido() {
+    let input = document.getElementById("buscador").value.toLowerCase();
+    let resultados = document.getElementById("resultados");
+
+    resultados.innerHTML = "";
+
+    if (input === "") {
+        resultados.innerHTML = "";
+        return;
+    }
+
+    let encontrados = 0;
+
+    paginas.forEach(pagina => {
+        if (pagina.contenido.includes(input)) {
+            resultados.innerHTML += `
+                <div class="resultado-item">
+                    <a href="${pagina.url}">
+                        🔎 ${pagina.titulo}
+                    </a>
+                </div>
+            `;
+            encontrados++;
+        }
+    });
+
+    if (encontrados === 0) {
+        resultados.innerHTML = `<p>No se encontraron resultados 😢</p>`;
+    }
+}
+</script>
+</html>
